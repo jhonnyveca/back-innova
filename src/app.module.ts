@@ -28,6 +28,9 @@ import { WebServiceSiteModule } from './innova/modules/web-service-site/web-serv
         password: configService.get<string>(DB_PASSWORD),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }),
       inject: [ConfigService],
     }),
